@@ -1,7 +1,7 @@
 from fastapi import APIRouter
 
-from api.v1.endpoints import artigo
-from api.v1.endpoints import usuario
+from src.api.v1.controllers import artigo
+from src.api.v1.controllers import usuario
 
 
 api_router = APIRouter()

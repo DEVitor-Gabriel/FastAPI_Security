@@ -3,7 +3,7 @@ from typing import List
 
 from pydantic import BaseModel, EmailStr
 
-from schemas.artigo_schema import ArtigoSchema
+from src.schemas.artigo_schema import ArtigoSchema
 
 
 class UsuarioSchemaBase(BaseModel):
