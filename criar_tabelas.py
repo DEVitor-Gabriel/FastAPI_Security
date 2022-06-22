@@ -1,3 +1,6 @@
+from dotenv import load_dotenv
+load_dotenv()
+
 from src.core.configs import settings
 from src.core.database import engine
 
