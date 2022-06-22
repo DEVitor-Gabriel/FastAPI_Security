@@ -1,15 +1,15 @@
 from typing import List
+import os
 
 from pydantic import BaseSettings
 from sqlalchemy.ext.declarative import declarative_base
 
-
 class Settings(BaseSettings):
     API_V1_STR: str = '/api/v1'
-    DB_URL: str = 'postgresql+asyncpg://postgres:alemar12345@localhost:5432/faculdade'
+    DB_URL: str = f'postgresql+asyncpg://{os.environ["DB_USER"]}:{os.environ["DB_PASSWORD"]}@{os.environ["DB_SERVER"]}:5432/{os.environ["DB_NAME"]}'
     DBBaseModel = declarative_base()
 
-    JWT_SECRET: str = 'qS96E1oCfq5gEZH-ngD91NC2qkcl0cffhNTIDGpF4pw'
+    JWT_SECRET: str = os.environ["JWT_SECRET"]
     """
     import secrets
 
